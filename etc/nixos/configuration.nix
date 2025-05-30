@@ -34,7 +34,7 @@
   console = {
     font = "Lat2-Terminus16";
     keyMap = "br-abnt2";
-    # useXkbConfig = true; # use xkb.options in tty.
+  #   useXkbConfig = true; # use xkb.options in tty.
   };
 
   # Enable the X11 windowing system.
@@ -76,19 +76,21 @@
     withUWSM = true;
     xwayland.enable = true;
   };
-  # Appimages
-  programs.appimage = {
-  	enable = true;
-  	binfmt = true;
-  };
   programs.hyprlock.enable = true;
   programs.waybar.enable = true;
-  programs.nm-applet.enable = true;
+  # GTK
   programs.dconf.enable = true;
+  programs.nm-applet.enable = true;
   programs.gnome-disks.enable = true;
+  # Appimages
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+  # Browser
   programs.firefox = {
-  	enable = true;
-  	nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
+    enable = true;
+    nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
   };
 
   # List packages installed in system profile.
@@ -103,13 +105,13 @@
     wget
     git
     unrar
-    uget
+    uget # Download Manager
     wl-clipboard
-    grim
-    slurp
-    mako
-    wofi
-    qview
+    grim # Screenshots
+    slurp # Screenshots
+    mako # Notifications
+    wofi # App Launcher
+    qview # Image viewer
     jdk # Java 21 for Minecraft
     # Hyprland
     hyprpolkitagent
@@ -124,7 +126,7 @@
     playerctl
     # Applets
     pwvucontrol
-    # Gnome
+    #Gnome
     adwaita-icon-theme
     gtk-engine-murrine
     zenity
@@ -150,9 +152,6 @@
     obs-studio
   ];
 
-  nixpkgs.config.allowUnfree = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -161,30 +160,31 @@
   #   enableSSHSupport = true;
   # };
 
+  nixpkgs.config.allowUnfree = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # List services that you want to enable:
-  services.getty.autologinUser = "user"; # Login into TTY
-  services.udisks2.enable = true; # Automounting support
-  hardware.bluetooth.enable = true; # Bluetooth support
-  services.blueman.enable = true; # Bluetooth applet
+  services.getty.autologinUser = "user"; # Log into TTY
+  services.openssh.enable = true; # Enable the OpenSSH daemon.
+  services.udisks2.enable = true; # Automouting support
   services.hypridle.enable = true;
-  services.gvfs.enable = true; # Nautilus outside Gnome
+  services.gvfs.enable = true; #Nautilus outside Gnome
+  services.blueman.enable = true; # Bluetooth applet
+  hardware.bluetooth.enable = true; # Bluetooth support
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # List fonts that you want to make accessible to applications
+  # Enable fonts accessible to applications.
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
     font-awesome
   ];
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
