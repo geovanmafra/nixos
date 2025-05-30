@@ -7,8 +7,8 @@ OSH_THEME="absimple"
 
 bash_profile
 >if uwsm check may-start; then
->	exec uwsm start hyprland-uwsm.desktop
->fi
+>>	exec uwsm start hyprland-uwsm.desktop
+>>>fi
 
 GTK THEME https://www.pling.com/p/1715554 // Mocha .themes/
 ICON THEME https://www.pling.com/p/1715570 // Mocha .icons/
