@@ -15,7 +15,9 @@ if uwsm check may-start; then
 fi
 ```
 
-GTK THEME https://www.pling.com/p/1715554 // Mocha .themes/ and .config/gtk-4.0
-ICON THEME https://www.pling.com/p/1715570 // Mocha .icons/
-CURSOR THEME https://github.com/catppuccin/cursors // Lavender .icons/
-MICRO THEME https://github.com/catppuccin/micro catppuccin-mocha-transparent .config/micro/colorschemes/
+Themes
+GTK https://www.pling.com/p/1715554 // Mocha .themes/ and .config/gtk-4.0
+ICONS https://www.pling.com/p/1715570 // Mocha .icons/
+CURSOR https://github.com/catppuccin/cursors // Lavender .icons/
+EDITOR https://github.com/catppuccin/micro .config/micro/colorschemes/ "set colorscheme catppuccin-mocha-transparent"
+TERMINAL .config/ghostty/config "theme = catppuccin-mocha"
