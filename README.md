@@ -13,3 +13,4 @@ bash_profile
 GTK THEME https://www.pling.com/p/1715554 // Mocha .themes/
 ICON THEME https://www.pling.com/p/1715570 // Mocha .icons/
 CURSOR THEME https://github.com/catppuccin/cursors // Lavender .icons/
+MICRO THEME https://github.com/catppuccin/micro catppuccin-mocha-transparent .config/micro/colorschemes/
