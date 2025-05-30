@@ -10,6 +10,6 @@ if uwsm check may-start; then
 	exec uwsm start hyprland-uwsm.desktop
 fi
 
-GTK THEME https://www.pling.com/p/1715554 // Mocha
-ICON THEME https://www.pling.com/p/1715570 // Mocha
-CURSOR THEME https://github.com/catppuccin/cursors // Lavender
+GTK THEME https://www.pling.com/p/1715554 // Mocha .themes/
+ICON THEME https://www.pling.com/p/1715570 // Mocha .icons/
+CURSOR THEME https://github.com/catppuccin/cursors // Lavender .icons/
