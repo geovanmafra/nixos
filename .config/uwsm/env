@@ -1,0 +1,9 @@
+export XCURSOR_SIZE=24
+export XCURSOR_THEME=catppuccin-mocha-lavender-cursors
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
+export GTK_THEME=Catppuccin-Dark
+export MICRO_TRUECOLOR=1
