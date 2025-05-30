@@ -59,7 +59,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.user = {
@@ -70,11 +70,13 @@
     ];
   };
 
-  # Window Manager
+  # Enable programs as services.
+  # Hyprland
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
   programs.hyprlock.enable = true;
   programs.waybar.enable = true;
@@ -82,12 +84,12 @@
   programs.dconf.enable = true;
   programs.nm-applet.enable = true;
   programs.gnome-disks.enable = true;
-  # Appimages
+  # Appimage support.
   programs.appimage = {
     enable = true;
     binfmt = true;
   };
-  # Browser
+  # Browser.
   programs.firefox = {
     enable = true;
     nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
@@ -105,14 +107,15 @@
     wget
     git
     unrar
-    uget # Download Manager
+    uget # Download Manager.
     wl-clipboard
-    grim # Screenshots
-    slurp # Screenshots
-    mako # Notifications
-    wofi # App Launcher
-    qview # Image viewer
-    jdk # Java 21 for Minecraft
+    grim # Screenshots.
+    slurp # Screenshots.
+    mako # Notifications daemon.
+    wofi # Application Launcher.
+    xdg-user-dirs # Home Folder Management.
+    qview # Image Viewer.
+    jdk # Java 21 for Minecraft.
     # Hyprland
     hyprpolkitagent
     hyprland-protocols
@@ -126,13 +129,12 @@
     playerctl
     # Applets
     pwvucontrol
-    #Gnome
+    # GTK
     adwaita-icon-theme
-    gtk-engine-murrine
-    zenity
-    nautilus # File Manager
-    file-roller # Archive Manager
-    xdg-user-dirs
+    gtk-engine-murrine # Theme Engine.
+    zenity # Dialog Box.
+    nautilus # File Manager.
+    file-roller # Archive Manager.
     # Gaming
     bottles
     ares
@@ -164,13 +166,13 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # List services that you want to enable:
-  services.getty.autologinUser = "user"; # Log into TTY
+  services.getty.autologinUser = "user"; # TTY AL.
   services.openssh.enable = true; # Enable the OpenSSH daemon.
-  services.udisks2.enable = true; # Automouting support
+  services.udisks2.enable = true; # Automounting support.
   services.hypridle.enable = true;
-  services.gvfs.enable = true; #Nautilus outside Gnome
-  services.blueman.enable = true; # Bluetooth applet
-  hardware.bluetooth.enable = true; # Bluetooth support
+  services.gvfs.enable = true; # Nautilus outside of Gnome.
+  services.blueman.enable = true; # Bluetooth applet.
+  hardware.bluetooth.enable = true; # Bluetooth support.
 
   # Enable fonts accessible to applications.
   fonts.packages = with pkgs; [
