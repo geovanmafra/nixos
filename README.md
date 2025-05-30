@@ -1,14 +1,14 @@
 # nixos
 
-> oh-my-bash
+oh-my-bash
 ```
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
 ```
-> bashrc
+bashrc
 ```
 OSH_THEME="absimple"
 ```
-> bash_profile
+bash_profile
 ```
 if uwsm check may-start; then
 	exec uwsm start hyprland-uwsm.desktop
