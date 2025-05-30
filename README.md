@@ -9,3 +9,7 @@ bash_profile
 if uwsm check may-start; then
 	exec uwsm start hyprland-uwsm.desktop
 fi
+
+GTK THEME https://www.pling.com/p/1715554 // Mocha
+ICON THEME https://www.pling.com/p/1715570 // Mocha
+CURSOR THEME https://github.com/catppuccin/cursors // Lavender
