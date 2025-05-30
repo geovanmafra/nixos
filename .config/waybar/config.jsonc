@@ -14,32 +14,42 @@
         "idle_inhibitor"
     ],
     "modules-center": [
+        "sway/window",
         "clock"
     ],
     "modules-right": [
-        "tray",
-        "wireplumber",
+        "mpd",
+        "pulseaudio",
+        "network",
+        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-        "power-profiles-daemon",
+        "backlight",
+        "keyboard-state",
+        "sway/language",
         "battery",
+        "battery#bat2",
+        "tray",
         "custom/power"
     ],
     // Modules configuration
-     "hyprland/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "warp-on-scroll": false,
-         "on-scroll-up": "hyprctl dispatch workspace e+1",
-         "on-scroll-down": "hyprctl dispatch workspace e-1",
-         "format": "{icon}",
-         "format-icons": {
-             "urgent": "",
-             "active": "",
-             "default": ""
-         }
-     },
+    // "hyprland/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -101,7 +111,7 @@
         // }
     },
     "clock": {
-        // "timezone": "America/Sao_Paulo",
+        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -112,17 +122,16 @@
     "memory": {
         "format": "{}% "
     },
-    
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp2_input",
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "amdgpu_bl1",
+        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
@@ -150,9 +159,9 @@
       "tooltip": true,
       "format-icons": {
         "default": "",
-        "performance": "100% ",
-        "balanced": "67% ",
-        "power-saver": "38% "
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
       }
     },
     "network": {
@@ -181,14 +190,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pwvucontrol"
-    },
-    "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-icons": {
-    	"default": ["", "", ""]
-    	},
-    	"on-click": "pwvucontrol"
+        "on-click": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {text}",
@@ -202,21 +204,14 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
-    "hyprland/window": {
- 	    "format" : "{title}",
- 	    "rewrite": {
- 	    	"~": "Ghostty $1",
- 	    },
-    	"separate-outputs": true
- 	},
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "systemctl poweroff",
-			"reboot": "systemctl reboot",
+			"shutdown": "shutdown",
+			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
