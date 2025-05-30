@@ -1,7 +1,9 @@
 # nixos
 
-> bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
-
+> oh-my-bash
+```
+bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+```
 > bashrc
 ```
 OSH_THEME="absimple"
