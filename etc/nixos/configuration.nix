@@ -115,6 +115,7 @@
     wofi # Application Launcher.
     xdg-user-dirs # Home Folder Management.
     qview # Image Viewer.
+    mpv # Video Player.
     jdk # Java 21 for Minecraft.
     # Hyprland
     hyprpolkitagent
