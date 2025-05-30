@@ -6,7 +6,7 @@ bashrc
 OSH_THEME="absimple"
 
 bash_profile
-if uwsm check may-start; then
+>if uwsm check may-start; then
 	exec uwsm start hyprland-uwsm.desktop
 fi
 
