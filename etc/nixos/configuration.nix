@@ -70,7 +70,7 @@
     ];
   };
 
-  # Enable programs as services.
+  # List packages installed as services.
   # Hyprland
   programs.hyprland = {
     enable = true;
@@ -96,6 +96,12 @@
     enable = true;
     nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
   };
+  # Java.
+  programs.java = {
+    enable = true;
+    binfmt = true;
+    java.package = pkgs.jdk;
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -120,7 +126,6 @@
     qview # Image Viewer.
     koreader # PDF and EPUB Reader.
     mpv # Video Player.
-    jdk # Java 21 for Minecraft.
     # Hyprland
     hyprland-protocols
     hyprland-qt-support
@@ -135,7 +140,6 @@
     # Applets
     pwvucontrol
     # GTK
-    adwaita-icon-theme
     gtk-engine-murrine # Theme Engine.
     networkmanagerapplet
     blueman
