@@ -1,5 +1,10 @@
 # nixos
 
+```
+nixos-rebuild list-generations
+nix-collect-garbage  -d // nix-collect-garbage --delete-older-than 1d
+sudo nixos-rebuild switch
+```
 oh-my-bash
 ```
 bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
