@@ -84,7 +84,7 @@
   programs.dconf.enable = true;
   programs.nm-applet = {
   	enable = true;
-  	indicator = false;
+  	indicator = true;
   };
   programs.gnome-disks.enable = true;
   # Appimage support.
