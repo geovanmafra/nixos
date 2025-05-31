@@ -82,7 +82,10 @@
   programs.waybar.enable = true;
   # GTK
   programs.dconf.enable = true;
-  programs.nm-applet.enable = true;
+  programs.nm-applet = {
+  	enable = true;
+  	indicator = false;
+  };
   programs.gnome-disks.enable = true;
   # Appimage support.
   programs.appimage = {
