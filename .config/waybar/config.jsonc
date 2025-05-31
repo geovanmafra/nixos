@@ -98,14 +98,12 @@
         "format": "{icon}",
         "format-icons": {
             "activated": "",
-            "deactivated": "",
-        "tooltip": false
+            "deactivated": ""
         }
     },
     "tray": {
         // "icon-size": 21,
         "spacing": 10,
-	"tooltip": false,
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -115,7 +113,7 @@
         // "timezone": "America/Sao_Paulo",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
-	"tooltip": false
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% ",
@@ -136,7 +134,7 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": [""],
-	"tooltip": false
+        "tooltip": false
     },
     "battery": {
         "states": {
@@ -151,8 +149,7 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
-	"tooltip": false
+        "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -192,8 +189,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""],
-	"tooltip": false
+            "default": ["", "", ""]
         },
         "on-click": "pwvucontrol"
     },
