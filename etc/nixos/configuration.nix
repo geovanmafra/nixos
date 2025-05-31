@@ -177,7 +177,10 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # List services that you want to enable:
-  services.getty.autologinUser = "user"; # TTY AL.
+  services.getty.autologinUser = {
+    autologinOnce = true;
+    autologinUser = "user";
+  };
   services.openssh.enable = true; # Enable the OpenSSH daemon.
   services.udisks2.enable = true; # Automounting support.
   services.hypridle.enable = true;
