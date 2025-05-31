@@ -21,6 +21,7 @@
         "tray",
         "mpd",
         "pulseaudio",
+	"network",
         "backlight",
         "power-profiles-daemon",
         "cpu",
@@ -172,7 +173,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
