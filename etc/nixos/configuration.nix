@@ -141,6 +141,7 @@
     # GTK
     gtk-engine-murrine # Theme Engine.
     gnome-themes-extra
+    dconf-editor
     networkmanagerapplet
     blueman
     zenity # Dialog Box.
