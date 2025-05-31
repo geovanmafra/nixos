@@ -143,6 +143,7 @@
     gtk-engine-murrine # Theme Engine.
     gnome-themes-extra
     dconf-editor
+    gsettings-desktop-schemas
     glib
     blueman
     zenity # Dialog Box.
