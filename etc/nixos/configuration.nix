@@ -78,6 +78,10 @@
     xwayland.enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
+  security.polkit = {
+    enable = true;
+    polkit.package = pkgs.hyprpolkitagent;
+  };
   programs.hyprlock.enable = true;
   # GTK
   programs.dconf.enable = true;
@@ -118,7 +122,6 @@
     mpv # Video Player.
     jdk # Java 21 for Minecraft.
     # Hyprland
-    hyprpolkitagent
     hyprland-protocols
     hyprland-qt-support
     hyprland-qtutils
