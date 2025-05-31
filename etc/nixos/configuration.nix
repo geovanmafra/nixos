@@ -142,6 +142,7 @@
     # GTK
     gtk-engine-murrine # Theme Engine.
     gnome-themes-extra
+    adwaita-icon-theme
     dconf-editor
     networkmanagerapplet
     gsettings-desktop-schemas
