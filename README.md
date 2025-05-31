@@ -22,4 +22,5 @@ ICONS https://www.pling.com/p/1715570 // Mocha .icons/
 CURSOR https://github.com/catppuccin/cursors // Lavender .icons/
 EDITOR https://github.com/catppuccin/micro .config/micro/colorschemes/ "set colorscheme catppuccin-mocha-transparent"
 TERMINAL .config/ghostty/config "theme = catppuccin-mocha"
+COLORS https://github.com/catppuccin/hyprland catppuccin-mocha
 ```
