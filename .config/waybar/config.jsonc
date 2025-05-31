@@ -21,7 +21,7 @@
         "tray",
         "mpd",
         "pulseaudio",
-	"network",
+	//	"network",
         "backlight",
         "power-profiles-daemon",
         "cpu",
