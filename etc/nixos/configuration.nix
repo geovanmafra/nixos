@@ -79,7 +79,6 @@
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
   programs.hyprlock.enable = true;
-  programs.waybar.enable = true;
   # GTK
   programs.dconf.enable = true;
   programs.nm-applet.enable = true;
@@ -128,6 +127,7 @@
     hyprpicker
     hyprpaper
     # Waybar
+    waybar
     brightnessctl
     playerctl
     # Applets
