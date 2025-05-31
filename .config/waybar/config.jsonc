@@ -111,7 +111,7 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
+        // "timezone": "America/Sao_Paulo",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
