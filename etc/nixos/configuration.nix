@@ -108,6 +108,7 @@
     git
     unrar
     uget # Download Manager.
+    ffmpegthumbnailer # Preview for videos.
     wl-clipboard
     grim # Screenshots.
     slurp # Screenshots.
