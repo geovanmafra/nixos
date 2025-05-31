@@ -141,6 +141,7 @@
     pwvucontrol
     # GTK
     gtk-engine-murrine # Theme Engine.
+    gnome-themes-extra
     networkmanagerapplet
     blueman
     zenity # Dialog Box.
