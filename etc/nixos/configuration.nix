@@ -80,7 +80,6 @@
   };
   security.polkit = {
     enable = true;
-    package = pkgs.hyprpolkitagent;
   };
   programs.hyprlock.enable = true;
   # GTK
@@ -127,7 +126,6 @@
     koreader # PDF and EPUB Reader.
     mpv # Video Player.
     # Hyprland
-    polkit
     hyprland-protocols
     hyprland-qt-support
     hyprland-qtutils
