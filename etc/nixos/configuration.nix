@@ -143,6 +143,7 @@
     gtk-engine-murrine # Theme Engine.
     gnome-themes-extra
     dconf-editor
+    networkmanagerapplet
     gsettings-desktop-schemas
     glib
     blueman
