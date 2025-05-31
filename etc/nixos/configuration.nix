@@ -10,12 +10,21 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    loader.timeout = 0;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+    # Use the latest kernel.
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    # Enable quiet boot.
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail" ];
+    plymouth.enable = true;
+  };
 
   networking.hostName = "e14"; # Define your hostname.
   # Pick only one of the below networking options.
