@@ -56,7 +56,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #workspaces button:hover {
@@ -65,7 +65,7 @@ button:hover {
 
 #workspaces button.active {
     background-color: transparent;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #b4befe;
 }
 
 #workspaces button.urgent {
@@ -115,15 +115,16 @@ button:hover {
 
 #clock {
     background-color: transparent;
+    color: #b4befe;
 }
 
 #battery {
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #b4befe;
     background-color: transparent;
 }
 
@@ -170,11 +171,12 @@ label:focus {
 
 #cpu {
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #memory {
     background-color: transparent;
+    color: #b4befe;
 }
 
 #disk {
@@ -183,6 +185,7 @@ label:focus {
 
 #backlight {
     background-color: transparent;
+    color: #b4befe;
 }
 
 #network {
@@ -195,12 +198,12 @@ label:focus {
 
 #pulseaudio {
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #pulseaudio.muted {
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #wireplumber {
@@ -249,11 +252,12 @@ label:focus {
 
 #idle_inhibitor {
     background-color: transparent;
+    color: #b4befe;
 }
 
 #idle_inhibitor.activated {
     background-color: transparent;
-    color: #ffffff;
+    color: #b4befe;
 }
 
 #mpd {
