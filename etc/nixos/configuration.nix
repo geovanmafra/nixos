@@ -135,6 +135,7 @@
     adwaita-icon-theme
     gtk-engine-murrine # Theme Engine.
     networkmanagerapplet
+    blueman
     zenity # Dialog Box.
     nautilus # File Manager.
     file-roller # Archive Manager.
@@ -174,7 +175,6 @@
   services.udisks2.enable = true; # Automounting support.
   services.hypridle.enable = true;
   services.gvfs.enable = true; # Nautilus outside of Gnome.
-  services.blueman.enable = true; # Bluetooth applet.
   hardware.bluetooth.enable = true; # Bluetooth support.
   services.tlp = {
     enable = true;
