@@ -126,6 +126,7 @@
     koreader # PDF and EPUB Reader.
     mpv # Video Player.
     # Hyprland
+    hyprpolkitagent
     hyprland-protocols
     hyprland-qt-support
     hyprland-qtutils
