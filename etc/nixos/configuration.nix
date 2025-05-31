@@ -100,7 +100,7 @@
   programs.java = {
     enable = true;
     binfmt = true;
-    java.package = pkgs.jdk;
+    package = pkgs.jdk;
   };
 
   # List packages installed in system profile.
@@ -127,6 +127,7 @@
     koreader # PDF and EPUB Reader.
     mpv # Video Player.
     # Hyprland
+    polkit
     hyprland-protocols
     hyprland-qt-support
     hyprland-qtutils
