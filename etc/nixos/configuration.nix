@@ -84,6 +84,10 @@
   programs.hyprlock.enable = true;
   # GTK
   programs.dconf.enable = true;
+  programs.nm-applet = {
+    enable = true;
+    indicator = false;
+  };
   programs.gnome-disks.enable = true;
   # Appimage support.
   programs.appimage = {
@@ -144,7 +148,6 @@
     gnome-themes-extra
     dconf-editor
     glib
-    networkmanagerapplet
     blueman
     zenity # Dialog Box.
     nautilus # File Manager.
