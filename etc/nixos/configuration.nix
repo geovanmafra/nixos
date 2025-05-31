@@ -80,7 +80,7 @@
   };
   security.polkit = {
     enable = true;
-    polkit.package = pkgs.hyprpolkitagent;
+    package = pkgs.hyprpolkitagent;
   };
   programs.hyprlock.enable = true;
   # GTK
