@@ -18,6 +18,7 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
         "mpd",
         "pulseaudio",
         "network",
@@ -30,7 +31,6 @@
         "sway/language",
         "battery",
         "battery#bat2",
-        "tray",
         "custom/power"
     ],
     // Modules configuration
@@ -190,7 +190,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
     "custom/media": {
         "format": "{icon} {text}",
@@ -210,8 +210,8 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
+			"shutdown": "systemctl poweroff",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
