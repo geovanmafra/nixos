@@ -177,7 +177,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # List services that you want to enable:
-  services.getty.autologinUser = {
+  services.getty = {
     autologinOnce = true;
     autologinUser = "user";
   };
