@@ -65,6 +65,10 @@
     ];
   };
 
+  security.polkit = {
+    enable = true;
+  };
+
   # List packages installed as services.
   programs = {
     # Hyprland
@@ -75,11 +79,6 @@
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
     hyprlock.enable = true;
-
-    # Polkit
-    security.polkit = {
-      enable = true;
-    };
 
     # GTK
     dconf.enable = true;
@@ -106,12 +105,12 @@
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
-    # mtr.enable = true;
-    # gnupg.agent = {
+    # programs.mtr.enable = true;
+    # programs.gnupg.agent = {
     #   enable = true;
     #   enableSSHSupport = true;
     # };
-  }:
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -181,7 +180,7 @@
     obs-studio
   ];
 
-  nixpkgs.config.allowUnfree = true; # Allow unfree packages.
+  nixpkgs.config.allowUnfree = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.bluetooth.enable = true; # Bluetooth support.
 
