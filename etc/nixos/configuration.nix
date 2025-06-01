@@ -66,39 +66,56 @@
   };
 
   # List packages installed as services.
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
-  };
-  security.polkit = {
-    enable = true;
-  };
-  programs.hyprlock.enable = true;
-  # GTK
-  programs.dconf.enable = true;
-  programs.gnome-disks.enable = true;
-  # Appimage support.
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-  # Browser.
-  programs.firefox = {
-    enable = true;
-    nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
-  };
-  # Java.
-  programs.java = {
-    enable = true;
-    binfmt = true;
-    package = pkgs.jdk;
-  };
+  programs = {
+    # Hyprland
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    };
+    hyprlock.enable = true;
+
+    # Polkit
+    security.polkit = {
+      enable = true;
+    };
+
+    # GTK
+    dconf.enable = true;
+    gnome-disks.enable = true;
+
+    # Appimage support.
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    # Browser.
+    firefox = {
+      enable = true;
+      nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
+    };
+
+    # Java.
+    java = {
+      enable = true;
+      binfmt = true;
+      package = pkgs.jdk;
+    };
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # mtr.enable = true;
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+  }:
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages.
   environment.systemPackages = with pkgs; [
     # TTY
     micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -165,15 +182,6 @@
     obs-studio
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  nixpkgs.config.allowUnfree = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.bluetooth.enable = true; # Bluetooth support.
 
