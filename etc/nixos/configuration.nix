@@ -175,6 +175,7 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  hardware.bluetooth.enable = true; # Bluetooth support.
 
   # List services that you want to enable:
   services = {
@@ -216,10 +217,9 @@
 
     # Nautilus outside of Gnome.
     gvfs.enable = true;
-    hardware.bluetooth.enable = true; # Bluetooth support.
 
     # Power management.
-    services.tlp = {
+    tlp = {
       enable = true;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
