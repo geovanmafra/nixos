@@ -114,71 +114,79 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    # TTY
-    micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    ghostty
-    btop
-    fastfetch
-    # Utilities
-    wget
-    git
-    unrar
-    uget # Download Manager.
-    ffmpegthumbnailer # Preview for videos.
-    wl-clipboard
-    grim # Screenshots.
-    slurp # Screenshots.
-    mako # Notifications daemon.
-    wofi # Application Launcher.
-    xdg-user-dirs # Home Folder Management.
-    qview # Image Viewer.
-    koreader # PDF and EPUB Reader.
-    mpv # Video Player.
-    # Hyprland
-    hyprpolkitagent
-    hyprland-protocols
-    hyprland-qt-support
-    hyprland-qtutils
-    hyprcursor
-    hyprpicker
-    hyprpaper
-    # Waybar
-    waybar
-    brightnessctl
-    playerctl
-    # Applets
-    pwvucontrol
-    # GTK
-    gtk-engine-murrine # Theme Engine.
-    gnome-themes-extra
-    adwaita-icon-theme
-    dconf-editor
-    networkmanagerapplet
-    gsettings-desktop-schemas
-    glib
-    blueman
-    zenity # Dialog Box.
-    nautilus # File Manager.
-    file-roller # Archive Manager.
-    # Gaming
-    bottles
-    ares
-    mednaffe
-    duckstation
-    pcsx2
-    rpcs3
-    ppsspp-qt
-    dolphin-emu
-    cemu
-    azahar
-    # Daily
-    keepassxc
-    discord
-    krita
-    krita-plugin-gmic
-    obs-studio
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      # TTY
+      micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      ghostty
+      btop
+      fastfetch
+
+      # Utilities
+      wget
+      git
+      unrar
+      uget # Download Manager.
+      ffmpegthumbnailer # Preview for videos.
+      wl-clipboard
+      grim # Screenshots.
+      slurp # Screenshots.
+      mako # Notifications daemon.
+      wofi # Application Launcher.
+      xdg-user-dirs # Home Folder Management.
+      qview # Image Viewer.
+      koreader # PDF and EPUB Reader.
+      mpv # Video Player.
+
+      # Hyprland
+      hyprpolkitagent
+      hyprland-protocols
+      hyprland-qt-support
+      hyprland-qtutils
+      hyprcursor
+      hyprpicker
+      hyprpaper
+
+      # Waybar
+      waybar
+      brightnessctl
+      playerctl
+
+      # Applets
+      pwvucontrol
+      # GTK
+      gtk-engine-murrine # Theme Engine.
+      gnome-themes-extra
+      adwaita-icon-theme
+      dconf-editor
+      networkmanagerapplet
+      gsettings-desktop-schemas
+      glib
+      blueman
+      zenity # Dialog Box.
+      nautilus # File Manager.
+      file-roller # Archive Manager.
+
+      # Gaming
+      bottles
+      ares
+      mednaffe
+      duckstation
+      pcsx2
+      rpcs3
+      ppsspp-qt
+      dolphin-emu
+      cemu
+      azahar
+
+      # Daily
+      keepassxc
+      discord
+      krita
+      krita-plugin-gmic
+      obs-studio
+    ];
+  };
 
   nixpkgs.config.allowUnfree = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
