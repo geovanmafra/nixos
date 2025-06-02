@@ -114,6 +114,7 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
+  nixpkgs.config.allowUnfree = true;
   environment = {
     systemPackages = with pkgs; [
       # TTY
@@ -186,10 +187,11 @@
       krita-plugin-gmic
       obs-studio
     ];
+
+    # Set environment variables.
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
-  nixpkgs.config.allowUnfree = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.bluetooth.enable = true; # Bluetooth support.
 
   # List services that you want to enable:
