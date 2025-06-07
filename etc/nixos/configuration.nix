@@ -117,9 +117,8 @@ in
       # Utilities.
       wget
       git
-      xz
-      unrar
       ntfs3g
+      p7zip-rar # File archiver.
       uget # Download manager.
       ffmpegthumbnailer # Preview for videos.
       wl-clipboard
