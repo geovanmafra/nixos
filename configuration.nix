@@ -121,6 +121,7 @@ in
     services.hyprpolkitagent.enable = true;
 
     # Lock screen utility.
+    security.pam.services.hyprlock = {};
     programs.hyprlock = {
       enable = true;
       settings = {
