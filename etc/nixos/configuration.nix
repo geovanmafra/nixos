@@ -39,6 +39,7 @@ in
     initrd.unl0kr.allowVendorDrivers = true;
   };
 
+  systemd.network.enable = true;
   networking = {
     # Define your hostname.
     hostName = "e14";
