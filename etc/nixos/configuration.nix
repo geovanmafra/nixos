@@ -109,16 +109,17 @@ in
       micro # The Nano editor is also installed by default.
       ghostty # Terminal emulator.
       neohtop # Resource monitor.
+      pulsemixer # Volume control tool.
       impala # Wi-Fi manager.
       bluetui # Bluetooth manager.
       rmpc # Music player client for MPD.
       fastfetch # System informations.
+      p7zip-rar # File archiver.
 
       # Utilities.
       wget
       git
       ntfs3g
-      p7zip-rar # File archiver.
       uget # Download manager.
       ffmpegthumbnailer # Preview for videos.
       wl-clipboard
@@ -201,6 +202,7 @@ in
     firefox = {
       enable = true;
       nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
+      nativeMessagingHosts.ff2mpv = true;
     };
 
     # Appimage support.
