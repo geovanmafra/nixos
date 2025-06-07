@@ -43,7 +43,7 @@ in
     # Pick only one of the below networking options.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    wireless.iwd.enable = true;
+    wireless.iwd.enable = true; # Wireless daemon.
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
@@ -104,11 +104,11 @@ in
     systemPackages = with pkgs; [
       # Terminal.
       micro # The Nano editor is also installed by default.
-      ghostty
+      ghostty # Terminal emulator.
       neohtop # Resource monitor.
       impala # Wi-Fi manager.
       bluetui # Bluetooth manager.
-      rmpc # Music player.
+      rmpc # Music player client for MPD.
       fastfetch # System informations.
 
       # Utilities.
@@ -117,15 +117,15 @@ in
       xz
       unrar
       ntfs3g
-      uget
-      ffmpegthumbnailer
+      uget # Download manager.
+      ffmpegthumbnailer # Preview for videos.
       wl-clipboard
       grim
       slurp
-      mako
-      wofi
-      qview
-      xdg-user-dirs
+      mako # Notification daemon.
+      wofi # Application Launcher.
+      qview # Image viewer.
+      xdg-user-dirs # Home folder Management.
       mpv
 
       # Hyprland.
@@ -143,16 +143,16 @@ in
       brightnessctl
 
       # GTK.
-      gtk-engine-murrine
+      gtk-engine-murrine # Theme engine.
       gnome-themes-extra
       adwaita-icon-theme
       dconf-editor
-      zenity
-      file-roller
+      zenity # Dialog Box.
+      file-roller # Archive manager.
       gparted
 
       # Daily.
-      keepassxc
+      keepassxc # Password manager.
       discord
       krita
       krita-plugin-gmic
