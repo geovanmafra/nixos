@@ -86,6 +86,11 @@ in
     # User configurations below.
     programs.bash.enable = true;
     services.hyprpolkitagent.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      settings = {
+      };
+    };
 
     # This value determines the Home Manager release that your configuration is 
     # compatible with. This helps avoid breakage when a new Home Manager release 
@@ -136,7 +141,6 @@ in
       xdg-user-dirs # Home folder Management.
 
       # Hyprland.
-      hyprpolkitagent
       hyprland-protocols
       hyprland-qt-support
       hyprland-qtutils
