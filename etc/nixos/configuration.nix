@@ -78,7 +78,10 @@ in
   # Define a user account for Home Manager.
   home-manager.users.user = { pkgs, ... }: {
     home.stateVersion = "25.05";
-    programs.git.enable = true;
+
+    # User configurations below.
+    # programs.zsh.enable = true;
+    # programs.git.enable = true;
   };
 
   # programs.firefox.enable = true;
