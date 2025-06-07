@@ -37,11 +37,13 @@ in
   };
 
   networking = {
-    hostName = "e14"; # Define your hostname.
+    # Define your hostname.
+    hostName = "e14";
 
     # Pick only one of the below networking options.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    wireless.iwd.enable = true;
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
