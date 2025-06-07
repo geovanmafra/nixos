@@ -109,6 +109,7 @@ in
       rmpc
       wget
       git
+      xz
       unrar
 
       # Utilities.
