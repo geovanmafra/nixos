@@ -34,6 +34,9 @@ in
     consoleLogLevel = 0;
     kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail" ];
     plymouth.enable = true;
+
+    # Load additional drivers for certain vendors (I.E: Wacom, Intel, etc.)
+    initrd.unl0kr.allowVendorDrivers = true;
   };
 
   networking = {
@@ -216,6 +219,39 @@ in
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
+
+    # Enable autologin into TTY.
+    getty = {
+      autologinOnce = true;
+      autologinUser = "user";
+    };
+
+    # Automounting support.
+    udisks2.enable = true;
+
+    # Enable idle daemon.
+    hypridle.enable = true;
+
+    # Power management.
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+
+        #Optional helps save long term battery health
+        START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
+        STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+      };
+    };
   };
 
   # List hardware services that you want to enable:
