@@ -88,11 +88,11 @@ in
     # Bash scripts.
     programs.bash = {
       enable = true;
-      profileExtra = {
-        if uwsm check may-start; then
-	        exec uwsm start hyprland-uwsm.desktop
-        fi
-      };
+      profileExtra = ''
+	if uwsm check may-start; then
+	  exec uwsm start hyprland-uwsm.desktop
+	fi
+      '';
     };
     # Bash theme.
     programs.oh-my-posh = {
