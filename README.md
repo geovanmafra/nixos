@@ -1,23 +1,18 @@
 # nixos
 
 ```
+sudo nix-collect-garbage  -d // sudo nix-collect-garbage --delete-older-than 1d
 nixos-rebuild list-generations
-nix-collect-garbage  -d // nix-collect-garbage --delete-older-than 1d
 sudo nixos-rebuild switch
 ```
-oh-my-bash
+TUI
 ```
-bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
-```
-bashrc
-```
-OSH_THEME="absimple"
-```
-bash_profile
-```
-if uwsm check may-start; then
-	exec uwsm start hyprland-uwsm.desktop
-fi
+yazi
+impala
+bluetui
+pulsemixer
+rmpc
+NeoHtop
 ```
 
 Themes
