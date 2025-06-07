@@ -4,15 +4,40 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  # Import Home Manager without nix-channel.
+  home-manager = builtins.fetchTarball {
+    url = "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
+  };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Introduce a new option called home-manager.users who maps the user to Home Manager configuration.
+      "${home-manager}/nixos"
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Use the latest kernel.
+    kernelPackages = pkgs.linuxPackages_zen; # More options available at https://nixos.wiki/wiki/Linux_kernel.
+
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
+    # Enable quiet boot.
+    loader.timeout = 0;
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" "boot.shell_on_fail" ];
+    plymouth.enable = true;
+
+    # Load additional drivers for certain vendors (I.E: Wacom, Intel, etc.)
+    initrd.unl0kr.allowVendorDrivers = true;
+  };
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
