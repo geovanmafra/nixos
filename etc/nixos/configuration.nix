@@ -128,9 +128,9 @@ in
       mako # Notification daemon.
       wofi # Application Launcher.
       qview # Image viewer.
+      mpv # Media player.
       xdg-utils # Set of command line tools that assist applications.
       xdg-user-dirs # Home folder Management.
-      mpv
 
       # Hyprland.
       hyprpolkitagent
@@ -153,6 +153,7 @@ in
       zenity # Dialog Box.
       gnome-disk-utility # Udisks graphical front-end.
       gparted # Disk partitioning tool.
+      nautilus # File manager.
 
       # Daily.
       keepassxc # Password manager.
@@ -186,6 +187,7 @@ in
     # };
 
     # Hyprland.
+    hyprlock.enable = true;
     hyprland = {
       enable = true;
       withUWSM = true;
@@ -267,6 +269,9 @@ in
 
     # Enable idle daemon.
     hypridle.enable = true;
+
+    # Nautilus outside of Gnome.
+    gvfs.enable = true;
 
     # Power management.
     tlp = {
