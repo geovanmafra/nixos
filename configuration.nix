@@ -103,6 +103,8 @@ in
     programs.bash = {
       enable = true;
       profileExtra = ''
+        clear > /dev/null 2>&1
+        exec &> /dev/null
         if uwsm check may-start; then
           exec uwsm start hyprland-uwsm.desktop
         fi
@@ -112,11 +114,31 @@ in
     # Bash theme.
     programs.oh-my-posh = {
       enable = true;
-      useTheme = "catppuccin_mocha";
+      useTheme = "clean-detailed";
     };
 
     # Hyprland.
     services.hyprpolkitagent.enable = true;
+
+    # Walppaper.
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "on";
+        splash = false;
+        splash_offset = 2.0;
+
+        preload =
+          [ "/share/wallpapers/buttons.png" "/share/wallpapers/cat_pacman.png" ];
+
+        wallpaper = [
+          "eDP-1,/share/wallpapers/buttons.png"
+          "HDMI-A-1,/share/wallpapers/cat_pacman.png"
+        ];
+      };
+    };
+
+    # Window Manager.
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
