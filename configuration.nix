@@ -46,8 +46,21 @@ in
     # Pick only one of the below networking options.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    wireless.iwd.enable = true; # Wireless daemon.
     dhcpcd.enable = false;
+    useNetworkd = true;
+    # Wireless daemon.
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network = {
+          EnableIPv6 = true;
+          RoutePriorityOffset = 300;
+        };
+        Settings = {
+          AutoConnect = false;
+        };
+      };
+    };
 
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
