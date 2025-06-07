@@ -121,6 +121,7 @@ in
       wget
       git
       ntfs3g
+      oh-my-posh # Bash theme.
       uget # Download manager.
       ffmpegthumbnailer # Preview for videos.
       wl-clipboard
