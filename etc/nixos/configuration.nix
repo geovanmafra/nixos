@@ -93,6 +93,9 @@ in
     home.stateVersion = "25.05"; # Please read the comment before changing. 
   };
 
+  # Allow proprietary software.
+  nixpkgs.config.allowUnfree = true;
+
   environment = {
     # Set environment variables.
     sessionVariables.NIXOS_OZONE_WL = "1";
