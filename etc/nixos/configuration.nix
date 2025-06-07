@@ -103,19 +103,19 @@ in
     # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
     systemPackages = with pkgs; [
       # Terminal.
-      micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      micro # The Nano editor is also installed by default.
       ghostty
-      fastfetch
-      btop
-      impala
-      bluetui
-      rmpc
+      neohtop # Resource monitor.
+      impala # Wi-Fi manager.
+      bluetui # Bluetooth manager.
+      rmpc # Music player.
+      fastfetch # System informations.
+
+      # Utilities.
       wget
       git
       xz
       unrar
-
-      # Utilities.
       ntfs3g
       uget
       ffmpegthumbnailer
