@@ -4,10 +4,18 @@
 
 { config, lib, pkgs, ... }:
 
+let
+  # Import Home Manager without nix-channel.
+  home-manager = builtins.fetchTarball {
+    url = "https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
+  };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      "${home-manager}/nixos"
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -58,14 +66,20 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
+  # Define a user account.
+  users.users.user = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      tree
+    ];
+  };
+
+  # Define a user account for Home Manager.
+  home-manager.users.user = { pkgs, ... }: {
+    home.stateVersion = "25.05";
+    programs.git.enable = true;
+  };
 
   # programs.firefox.enable = true;
 
