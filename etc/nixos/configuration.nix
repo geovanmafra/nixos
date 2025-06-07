@@ -183,6 +183,38 @@ in
     #   enable = true;
     #   enableSSHSupport = true;
     # };
+
+    # Hyprland.
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    };
+
+    # File manager.
+    yazi = {
+      enable = true;
+    };
+
+    # Browser.
+    firefox = {
+      enable = true;
+      nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
+    };
+
+    # Appimage support.
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    # Java.
+    java = {
+      enable = true;
+      binfmt = true;
+      package = pkgs.jdk;
+    };
   };
 
   # List fonts accessible to applications.
