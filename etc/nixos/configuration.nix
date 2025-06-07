@@ -93,12 +93,16 @@ in
     home.stateVersion = "25.05"; # Please read the comment before changing. 
   };
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
+  environment = {
+    # Set environment variables.
+    sessionVariables.NIXOS_OZONE_WL = "1";
+
+    # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
+    systemPackages = with pkgs; [
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are started in user sessions.
   programs = {
