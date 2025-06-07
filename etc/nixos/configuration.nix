@@ -99,8 +99,72 @@ in
 
     # List packages installed in system profile. You can use https://search.nixos.org/ to find more packages (and options).
     systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      # Terminal.
+      micro # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      ghostty
+      fastfetch
+      btop
+      impala
+      bluetui
+      rmpc
       wget
+      git
+      unrar
+
+      # Utilities.
+      uget
+      ffmpegthumbnailer
+      wl-clipboard
+      grim
+      slurp
+      mako
+      wofi
+      qview
+      xdg-user-dirs
+      mpv
+
+      # Hyprland.
+      hyprpolkitagent
+      hyprland-protocols
+      hyprland-qt-support
+      hyprland-qtutils
+      hyprcursor
+      hyprpicker
+      hyprpaper
+
+      # Waybar.
+      waybar
+      playerctl
+      brightnessctl
+
+      # GTK.
+      gtk-engine-murrine
+      gnome-themes-extra
+      adwaita-icon-theme
+      dconf-editor
+      zenity
+      file-roller
+
+      # Daily.
+      keepassxc
+      discord
+      krita
+      krita-plugin-gmic
+      obs-studio
+
+      # Gaming.
+      bottles
+      ares
+      mednaffe
+      # Sony.
+      duckstation
+      pcsx2
+      rpcs3
+      ppsspp-qt
+      # Nintendo.
+      dolphin-emu
+      cemu
+      azahar
     ];
   };
 
