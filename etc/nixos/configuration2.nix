@@ -122,6 +122,11 @@ in
     #  };
     #};
 
+    services.mpd = {
+    	enable = true;
+    	musicDirectory = "/home/user/Music";
+    };
+
     # This value determines the Home Manager release that your configuration is 
     # compatible with. This helps avoid breakage when a new Home Manager release 
     # introduces backwards incompatible changes. 
@@ -148,7 +153,6 @@ in
       impala # Wi-Fi manager.
       bluetui # Bluetooth manager.
       pulsemixer # Volume control tool.
-      mpd # Daemon for playing music.
       rmpc # Music player client for MPD.
       fastfetch # System informations.
       p7zip-rar # File archiver.
@@ -161,8 +165,7 @@ in
       uget # Download manager.
       ffmpegthumbnailer # Preview for videos.
       wl-clipboard
-      grim
-      slurp
+      grimblast # Screenshot support.
       mako # Notification daemon.
       wofi # Application Launcher.
       qview # Image viewer.
@@ -176,7 +179,6 @@ in
       hyprland-qtutils
       hyprcursor
       hyprpicker
-      hyprpaper
 
       # Waybar.
       waybar
