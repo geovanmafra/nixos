@@ -112,6 +112,7 @@ in
       unrar
 
       # Utilities.
+      ntfs3g
       uget
       ffmpegthumbnailer
       wl-clipboard
@@ -144,6 +145,7 @@ in
       dconf-editor
       zenity
       file-roller
+      gparted
 
       # Daily.
       keepassxc
