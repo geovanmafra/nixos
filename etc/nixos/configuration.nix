@@ -149,7 +149,6 @@ in
       gtk-engine-murrine # Theme engine.
       gnome-themes-extra
       adwaita-icon-theme
-      dconf-editor
       zenity # Dialog Box.
       file-roller # Archive manager.
       gparted
