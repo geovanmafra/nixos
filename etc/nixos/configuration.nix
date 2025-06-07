@@ -22,7 +22,7 @@ in
 
   boot = {
     # Use the latest kernel.
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen; # More options available at https://nixos.wiki/wiki/Linux_kernel.
 
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
