@@ -204,7 +204,7 @@ in
     firefox = {
       enable = true;
       nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
-      nativeMessagingHosts.ff2mpv = true;
+      nativeMessagingHosts.packages = with pkgs; [ ff2mpv ];
     };
 
     # Appimage support.
