@@ -203,8 +203,10 @@ in
     # Browser.
     firefox = {
       enable = true;
-      nativeMessagingHosts.packages = with pkgs; [ uget-integrator ];
-      nativeMessagingHosts.packages = with pkgs; [ ff2mpv ];
+      nativeMessagingHosts.packages = with pkgs; [ 
+        uget-integrator
+        ff2mpv
+      ];
     };
 
     # Appimage support.
