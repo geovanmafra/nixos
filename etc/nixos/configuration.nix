@@ -15,6 +15,8 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Introduce a new option called home-manager.users who maps the user to Home Manager configuration.
       "${home-manager}/nixos"
     ];
 
@@ -77,11 +79,19 @@ in
 
   # Define a user account for Home Manager.
   home-manager.users.user = { pkgs, ... }: {
-    home.stateVersion = "25.05";
+    home.packages = [ pkgs.atool pkgs.httpie ];
 
     # User configurations below.
-    # programs.zsh.enable = true;
-    # programs.git.enable = true;
+    programs.bash.enable = true;
+
+    # This value determines the Home Manager release that your configuration is 
+    # compatible with. This helps avoid breakage when a new Home Manager release 
+    # introduces backwards incompatible changes. 
+    #
+    # You should not change this value, even if you update Home Manager. If you do 
+    # want to update the value, then make sure to first check the Home Manager 
+    # release notes. 
+    home.stateVersion = "25.05"; # Please read the comment before changing. 
   };
 
   # programs.firefox.enable = true;
