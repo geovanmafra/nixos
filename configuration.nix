@@ -80,7 +80,45 @@ in
     ];
   };
 
-  # programs.firefox.enable = true;
+  # Define a user account for Home Manager.
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.user = { pkgs, ... }: {
+    home.packages = [ pkgs.atool pkgs.httpie ];
+
+    # User configurations below.
+    # Bash scripts.
+    programs.bash = {
+      enable = true;
+      profileExtra = ''
+        if uwsm check may-start; then
+          exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
+    };
+
+    # Bash theme.
+    programs.oh-my-posh = {
+      enable = true;
+      useTheme = "catppuccin_mocha";
+    };
+
+    # Hyprland.
+    services.hyprpolkitagent.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      settings = {
+      };
+    };
+
+    # This value determines the Home Manager release that your configuration is
+    # compatible with. This helps avoid breakage when a new Home Manager release
+    # introduces backwards incompatible changes.
+    #
+    # You should not change this value, even if you update Home Manager. If you do
+    # want to update the value, then make sure to first check the Home Manager
+    # release notes.
+    home.stateVersion = "25.05"; # Please read the comment before changing.
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
