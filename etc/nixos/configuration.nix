@@ -128,6 +128,7 @@ in
       mako # Notification daemon.
       wofi # Application Launcher.
       qview # Image viewer.
+      xdg-utils # Set of command line tools that assist applications.
       xdg-user-dirs # Home folder Management.
       mpv
 
@@ -150,8 +151,8 @@ in
       gnome-themes-extra
       adwaita-icon-theme
       zenity # Dialog Box.
-      file-roller # Archive manager.
-      gparted
+      gnome-disk-utility # Udisks graphical front-end.
+      gparted # Disk partitioning tool.
 
       # Daily.
       keepassxc # Password manager.
