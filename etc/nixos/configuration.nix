@@ -80,17 +80,33 @@ in
   };
 
   # Define a user account for Home Manager.
+  home-manager.backupFileExtension = "backup";
   home-manager.users.user = { pkgs, ... }: {
     home.packages = [ pkgs.atool pkgs.httpie ];
 
     # User configurations below.
-    programs.bash.enable = true;
-    services.hyprpolkitagent.enable = true;
-    wayland.windowManager.hyprland = {
+    # Bash scripts.
+    programs.bash = {
       enable = true;
-      settings = {
+      profileExtra = {
+        if uwsm check may-start; then
+	        exec uwsm start hyprland-uwsm.desktop
+        fi
       };
     };
+    # Bash theme.
+    programs.oh-my-posh = {
+      enable = true;
+      useTheme = catppuccin_mocha;
+    };
+
+    # Hyprland.
+    services.hyprpolkitagent.enable = true;
+    #wayland.windowManager.hyprland = {
+    #  enable = true;
+    #  settings = {
+    #  };
+    #};
 
     # This value determines the Home Manager release that your configuration is 
     # compatible with. This helps avoid breakage when a new Home Manager release 
