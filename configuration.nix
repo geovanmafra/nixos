@@ -121,10 +121,19 @@ in
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  # List fonts accessible to applications.
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    font-awesome # For Waybar icons.
+  ];
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # List services that you want to enable:
+  services = {
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
