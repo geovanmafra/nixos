@@ -109,9 +109,10 @@ in
       micro # The Nano editor is also installed by default.
       ghostty # Terminal emulator.
       neohtop # Resource monitor.
-      pulsemixer # Volume control tool.
       impala # Wi-Fi manager.
       bluetui # Bluetooth manager.
+      pulsemixer # Volume control tool.
+      mpd # Daemon for playing music.
       rmpc # Music player client for MPD.
       fastfetch # System informations.
       p7zip-rar # File archiver.
