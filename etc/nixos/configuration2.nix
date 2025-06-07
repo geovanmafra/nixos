@@ -101,6 +101,8 @@ in
     programs.bash = {
       enable = true;
       profileExtra = ''
+        clear > /dev/null 2>&1
+      	exec &> /dev/null
       	if uwsm check may-start; then
       		exec uwsm start hyprland-uwsm.desktop
       	fi
